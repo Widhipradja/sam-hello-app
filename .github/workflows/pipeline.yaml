@@ -3,7 +3,7 @@ name: Pipeline
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
       - 'feature**'
   delete:
     branches:
@@ -161,7 +161,7 @@ jobs:
           path: packaged-prod.yaml
 
   deploy-testing:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     needs: [build-and-package]
     runs-on: ubuntu-latest
     steps:
